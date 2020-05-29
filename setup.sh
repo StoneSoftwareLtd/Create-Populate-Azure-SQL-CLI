@@ -18,7 +18,7 @@ echo "Configuring firewall..."
 az sql server firewall-rule create --resource-group $resource --server $server -n AllowYourIp --start-ip-address $startIP --end-ip-address $endIP
 
 echo "Creating $database on $server..."
-az sql db create --resource-group $resource --server $server --name $database --sample-name AdventureWorksLT --edition Basic --family Gen4 --capacity 1 --zone-redundant false
+az sql db create --resource-group $resource --server $server --name $database --edition Basic --zone-redundant false
 
 sqlcmd -S tcp:$server.database.windows.net -d database -U login -P password -i populatedb-test-data.sql
 
