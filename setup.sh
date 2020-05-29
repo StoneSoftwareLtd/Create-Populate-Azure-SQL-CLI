@@ -20,7 +20,7 @@ az sql server firewall-rule create --resource-group $resource --server $server -
 echo "Creating $database on $server..."
 az sql db create --resource-group $resource --server $server --name $database --edition Basic --zone-redundant false
 
-sqlcmd -S tcp:$server.database.windows.net -d database -U login -P password -i populatedb-test-data.sql
+sqlcmd -S tcp:$server.database.windows.net -d $database -U $login -P $password -i populatedb-test-data.sql
 
 printf "***********************    IMPORTANT INFO  *********************\n\n"
 
