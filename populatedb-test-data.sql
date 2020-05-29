@@ -1,5 +1,5 @@
 CREATE TABLE inventory (
-	id serial PRIMARY KEY, 
+	id int PRIMARY KEY, 
 	name VARCHAR(50), 
 	quantity INTEGER
 );
